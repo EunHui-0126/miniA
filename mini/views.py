@@ -7,7 +7,7 @@ from django.forms.models import model_to_dict
 
 
 def main(request):
-    return render(request,'base.html')
+    return render(request,'index.html')
 
 def phone_data(request):
     data = phone.objects.all()
