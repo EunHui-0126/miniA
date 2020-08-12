@@ -36,14 +36,18 @@ def list(request):
     return render(request,'list.html', context)
 
 def main(request):
-    return render(request,'index.html')
-
-def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
 
 # def phone_data(request):
+    
+#     print(1)
+#     print(data)
+#     return render(request,'index.html',{'data':data})
+
+# def phone_data(request):
 #     data = phone.objects.all()
+    
 #     phone_list = []
 #     for p in data:
 #         d = model_to_dict(p) # QuerySet -> Dict
