@@ -75,7 +75,6 @@ def main(request):
     soup = bs(res.text,'html.parser')
 
     a_list = soup.select_one('dl:nth-child(2) dd')
-    print(a_list.get_text('\n'))
     return render(request,'index.html',{'a_list':a_list.get_text('\n')})
 
 def phone_data(request):
