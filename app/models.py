@@ -4,6 +4,7 @@ class menu(models.Model):
     restaurant = models.CharField(max_length=50)
     food = models.CharField(max_length=50)
 
+
 class Article(models.Model):
     # id = models.CharField(max_length=100)
     title = models.CharField(max_length=1000)
@@ -12,3 +13,8 @@ class Article(models.Model):
 
 
     
+
+class phone(models.Model):
+    name =  models.CharField(max_length=50)
+    ph =  models.CharField(max_length=50)
+
