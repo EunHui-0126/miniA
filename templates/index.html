@@ -24,6 +24,23 @@ http://www.templatemo.com/tm-513-avalon
 
     <script src="/static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
+<style>
+    .container {
+        overflow: scroll;
+        width: 400px;
+        height: 400px;
+        padding-right: 0;
+    }
+
+    .col-md-8 {
+        width: 1000px;
+        height: 500px;
+    }
+
+    .col-md-4 {
+        width: 200px;
+    }
+</style>
 
 <body>
 
@@ -45,14 +62,33 @@ http://www.templatemo.com/tm-513-avalon
                 <div class="col-md-4">
                     <div class="right-banner-content">
                         <ul>
-                                <li>{{a_list}}</li>
-                    
+                            <li>{{a_list}}</li>
+
                         </ul>
                     </div>
+                </div>
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>식당</th>
+                                <th>전화번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in data %}
+                            <tr>
+                                <td>{{c.name}}</td>
+                                <td>{{c.ph}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- <style>
         .best-offer {
@@ -105,6 +141,12 @@ http://www.templatemo.com/tm-513-avalon
                     </div>
                 </div>
             </div>
+
+    <section class="best-offer" id=best-offer-section>
+        
+        </ul>
+        </div>
+
         </div>
     </section>
     </script>
@@ -112,4 +154,5 @@ http://www.templatemo.com/tm-513-avalon
        
 
 </body>
+
 </html>
