@@ -1,17 +1,14 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-<<<<<<< HEAD
-
-from django.shortcuts import render, redirect
-
-=======
->>>>>>> ea8b46f6fa121f3d96f4fbc3f0383b8335cdd5a8
 from django.shortcuts import render, redirect
 from app.models import Article
 from django.shortcuts import render
 from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from django.forms.models import model_to_dict
+
+import requests
+from bs4 import BeautifulSoup as bs
 
 def main(request):
     return render(request,'base.html')
@@ -42,11 +39,26 @@ def list(request):
     return render(request,'list.html', context)
 
 def main(request):
-    return render(request,'index.html')
+    address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
+    res = requests.get(address)
+    soup = bs(res.text,'html.parser')
+
+    a_list = soup.select_one('dl:nth-child(2) dd')
+    print(a_list.get_text('\n'))
+    return render(request,'index.html',{'a_list':a_list.get_text('\n')})
 
 def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
+
+# def food_menu_list(request):
+#     address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
+#     res = requests.get(address)
+#     soup = bs(res.text,'html.parser')
+
+#     a_list = soup.select_one('dl:nth-child(2) dd')
+#     print(a_list.get_text('\n'))
+#     return render(request,'index.html',{'a_list':a_list.get_text('\n')})
 
 # def phone_data(request):
 #     data = phone.objects.all()
@@ -54,8 +66,4 @@ def phone_data(request):
 #     for p in data:
 #         d = model_to_dict(p) # QuerySet -> Dict
 #         phone_list.append(d)
-<<<<<<< HEAD
 #     return JsonResponse(phone_list, safe=False)
-=======
-#     return JsonResponse(phone_list, safe=False)
->>>>>>> ea8b46f6fa121f3d96f4fbc3f0383b8335cdd5a8
