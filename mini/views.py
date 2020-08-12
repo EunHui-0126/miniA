@@ -73,12 +73,7 @@ def main(request):
     address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
-    a_list = soup.select_one('dl:nth-child(2) dd')
-<<<<<<< HEAD
-    return render(request,'index.html',{'a_list':a_list.get_text('\n')})
-=======
+    a_list = soup.select_one('dl:nth-child(2)')
     data = phone.objects.all()
-    print(a_list.get_text('\n'))
-    return render(request,'index.html',{'a_list':a_list.get_text('\n'),'data':data})
->>>>>>> decb38b771d43ccd51aad0be55b6732f2d33d10b
+    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data})
 
