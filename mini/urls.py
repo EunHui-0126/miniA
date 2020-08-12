@@ -20,19 +20,10 @@ import mini.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', views.main),
-
     path('board/', views.board),
     path('list/', views.list),
-<<<<<<< HEAD
-
-=======
-=======
-<<<<<<< HEAD
     path('board/', views.board),
     path('list/', views.list),
-=======
->>>>>>> ed86002b9fb9519619df34a38a96e484454a41da
->>>>>>> 76fdf9f7b992771c8939a2c633142f358b3761ae
     path('phone_data/', views.phone_data),
 
 ]
