@@ -20,4 +20,5 @@ import mini.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main/', views.main),
+    path('phone_data/', views.phone_data),
 ]
