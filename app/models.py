@@ -3,3 +3,12 @@ from django.db import models
 class menu(models.Model):
     restaurant = models.CharField(max_length=50)
     food = models.CharField(max_length=50)
+
+class Article(models.Model):
+    # id = models.CharField(max_length=100)
+    title = models.CharField(max_length=1000)
+    content = models.CharField(max_length=1000)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+    
