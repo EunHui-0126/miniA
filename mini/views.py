@@ -71,5 +71,4 @@ def main(request):
 
 def phone_data(request):
     data = phone.objects.all()
-    return render(request,'base.html',{'data':data})
-
+    return render(request,'index.html',{'data':data})
