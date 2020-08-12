@@ -11,9 +11,6 @@ class Article(models.Model):
     content = models.CharField(max_length=1000)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-
-    
-
 class phone(models.Model):
     name =  models.CharField(max_length=50)
     ph =  models.CharField(max_length=50)
