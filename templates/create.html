@@ -1,6 +1,11 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div class="jumbotron">
     <div class="container text-center">
-        <form method="post" action="/list/">
+        <form method="post" action="/board/">
             {% csrf_token %}
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -10,9 +15,9 @@
                 <label for="content">Content:</label>
                 <textarea class="form-control" rows="5" name="content" id="content"></textarea>
             </div>
-            <a href="/list/"><button type="submit" id="complete" class="btn btn-primary btn-block">
+                <button type="submit" id="complete" class="btn btn-primary btn-block">
                 글쓰기
-            </button></a>
+            </button>
         </form>
     </div>
 </div>

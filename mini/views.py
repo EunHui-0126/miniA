@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # from django.shortcuts import render, get_object_or_404, redirect
 # from django.utils import timezone
@@ -21,7 +21,7 @@ def board(request):
             # # insert into article (title, content, user_id) values (?, ?, ?)
             article = Article(title=title, content=content)
             article.save()
-            return render(request, 'list.html')
+            return redirect('/list')
         except:
             return render(request, 'base.html')
     # return render(request, 'write.html')
@@ -29,6 +29,7 @@ def board(request):
 
 def list(request):
     article_list = Article.objects.order_by('-id')
+    print(article_list)
     context = {
         'article_list' : article_list
     }
