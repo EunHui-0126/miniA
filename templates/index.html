@@ -54,53 +54,33 @@ http://www.templatemo.com/tm-513-avalon
         </div>
     </section>
 
-    <style>
+    <!-- <style>
         .best-offer {
             overflow: scroll;
             width: 300px;
             height: 200px;
         }
-    </style>
-    <section class="best-offer" id=best-offer-section>
+    </style> -->
 
+    <section class="best-offer" id=best-offer-section>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="best-offer-left-content">
-                        <!-- <div class="icon"><img src="/static/img/best-offer-icon.png" alt=""></div>
-                        <h4>Best Offer For You</h4>
-                    </div> -->
-                    <div class="container">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>식당</th>
-                                    <th>전화번호</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for c in data %}
-                                <tr>
-                                    <td>{{c.name}}</td>
-                                    <td>{{c.ph}}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                    <div class="left-banner-content">
+                        <div class="text-content">
+                            <h6>There you go</h6>
+                            <div class="line-dec"></div>
+                            <h1>안동대 <br>뭐먹지?</h1>
+                            <div class="white-border-button">
+                                <a href="#" class="scroll-link" data-id="best-offer-section">Discover More</a>
+                            </div>
+                        </div>
                     </div>
-                </section>
                 </div>
                 <div class="col-md-4">
-                    <div class="best-offer-right-content">
-                        <div class="row">
-                            <!-- <div class="col-md-6 col-sm-12"> -->
-                                <meta charset="utf-8">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-
-<div class="jumbotron">
+                    <div class="right-banner-content">
+                        <ul>
+                                <div class="jumbotron">
     <div class="container text-center">
         <form method="post" action="/board/">
             {% csrf_token %}
@@ -118,53 +98,12 @@ http://www.templatemo.com/tm-513-avalon
         </form>
     </div>
 </div>
-
-                                <!-- <h2>Awesome &amp; Unique<br>Layout <em>Theme</em></h2>
-                                <p>Avalon is a full-width responsive web template. Please tell your friends about <a href="https://www.facebook.com/templatemo" target="_parent">templatemo</a>. Thank you. Feel free to use this template. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cura bitur et sem blandit, rhoncus ante, varius libero. Cras elemen tum tincidunt ullamcorper.</p>
-                                <ul>
-                                    <li>+ Aenean eget ex faucibus, tempor nibh vel.</li>
-                                    <li>+ Bibendum tortor. Suspendisse a diam viverra.</li>
-                                    <li>+ Finibus ipsum et, imperdiet felis.</li>
-                                    <li>+ Donec laoreet efficitur ultrices sit amet enim.</li>
-                                </ul>
-                                <div class="pink-button">
-                                    <a href="#" class="scroll-link" data-id="events-section">Discover More</a>
-                                </div> -->
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <meta charset="utf-4">
-                                <meta name="viewport" content="width=device-width, initial-scale=1">
-                                <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-                                <!-- <div class="jumbotron">
-                                    <div class="container text-left">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>번호</th>
-                                                    <th>제목</th>
-                                                    <th>내용</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for article in article_list %}
-                                                <tr>
-                                                 <tr onclick='location="/article/detail/{{ article.id }}"'>
-                                                    <td>{{ article.id }}</td>
-                                                    <td>{{ article.title }}</button></td>
-                                                    <td>{{ article.content }}</td>
-                                                </tr>
-                                                {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+</div>
+ </div>
                     
-        </div>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
