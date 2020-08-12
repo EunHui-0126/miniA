@@ -81,30 +81,3 @@ def main(request):
 def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
-<<<<<<< HEAD
-
-# def food_menu_list(request):
-#     address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
-#     res = requests.get(address)
-#     soup = bs(res.text,'html.parser')
-
-#     a_list = soup.select_one('dl:nth-child(2) dd')
-#     print(a_list.get_text('\n'))
-#     return render(request,'index.html',{'a_list':a_list.get_text('\n')})
-
-# def phone_data(request):
-    
-#     print(1)
-#     print(data)
-#     return render(request,'index.html',{'data':data})
-
-# def phone_data(request):
-#     data = phone.objects.all()
-    
-#     phone_list = []
-#     for p in data:
-#         d = model_to_dict(p) # QuerySet -> Dict
-#         phone_list.append(d)
-#     return JsonResponse(phone_list, safe=False)
-=======
->>>>>>> 1e480223c525f294f3d8db36eb00cb341b0da849

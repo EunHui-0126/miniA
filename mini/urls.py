@@ -22,8 +22,4 @@ urlpatterns = [
     path('main/', views.main),
     path('board/', views.board),
     path('list/', views.list),
-<<<<<<< HEAD
-=======
-    path('phone_data/', views.phone_data),
->>>>>>> 1e480223c525f294f3d8db36eb00cb341b0da849
 ]
