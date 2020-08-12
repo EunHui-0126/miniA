@@ -84,7 +84,7 @@ p {
 	text-align: left;
 	background-image: url(../img/RS2435tq.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: auto;
 	background-position: center center;
 	min-height: 680px;
 	height: 680px;
