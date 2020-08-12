@@ -22,4 +22,9 @@ urlpatterns = [
     path('main/', views.main),
     path('board/', views.board),
     path('list/', views.list),
+<<<<<<< HEAD
+=======
+    path('phone_data/', views.phone_data),
+    # path('food_menu_list/', views.food_menu_list),
+>>>>>>> 5c9c43cd0334f1a911a73dea62b366c83d9849f6
 ]

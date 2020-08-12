@@ -7,6 +7,9 @@ from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from django.forms.models import model_to_dict
 
+import requests
+from bs4 import BeautifulSoup as bs
+
 def main(request):
     return render(request,'base.html')
 
@@ -36,8 +39,29 @@ def list(request):
     return render(request,'list.html', context)
 
 def main(request):
+<<<<<<< HEAD
+=======
+    address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
+    res = requests.get(address)
+    soup = bs(res.text,'html.parser')
+
+    a_list = soup.select_one('dl:nth-child(2) dd')
+    print(a_list.get_text('\n'))
+    return render(request,'index.html',{'a_list':a_list.get_text('\n')})
+
+def phone_data(request):
+>>>>>>> 5c9c43cd0334f1a911a73dea62b366c83d9849f6
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
+
+# def food_menu_list(request):
+#     address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
+#     res = requests.get(address)
+#     soup = bs(res.text,'html.parser')
+
+#     a_list = soup.select_one('dl:nth-child(2) dd')
+#     print(a_list.get_text('\n'))
+#     return render(request,'index.html',{'a_list':a_list.get_text('\n')})
 
 # def phone_data(request):
     
