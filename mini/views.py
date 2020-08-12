@@ -1,12 +1,8 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-<<<<<<< HEAD
-=======
 
 from django.shortcuts import render, redirect
-=======
->>>>>>> 0ec69d05943c5cb93a7b8f76b74d4526e06c7879
-<<<<<<< HEAD
+
 from django.shortcuts import render, redirect
 
 # from django.shortcuts import render, get_object_or_404, redirect
@@ -43,12 +39,7 @@ def list(request):
     return render(request,'list.html', context)
 
  
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0ec69d05943c5cb93a7b8f76b74d4526e06c7879
 from django.shortcuts import render
->>>>>>> ed86002b9fb9519619df34a38a96e484454a41da
 from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from django.forms.models import model_to_dict
@@ -101,16 +92,3 @@ def phone_data(request):
 #         d = model_to_dict(p) # QuerySet -> Dict
 #         phone_list.append(d)
 #     return JsonResponse(phone_list, safe=False)
-<<<<<<< HEAD
->>>>>>> ccba940326267a055ed417fbb2a7d7d3449f3776
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> ccba940326267a055ed417fbb2a7d7d3449f3776
->>>>>>> ed86002b9fb9519619df34a38a96e484454a41da
->>>>>>> 76fdf9f7b992771c8939a2c633142f358b3761ae
->>>>>>> 0ec69d05943c5cb93a7b8f76b74d4526e06c7879
