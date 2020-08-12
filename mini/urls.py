@@ -24,10 +24,6 @@ urlpatterns = [
     path('list/', views.list),
 
 
-    path('board/', views.board),
-    path('list/', views.list),
-
-
     path('phone_data/', views.phone_data),
     # path('food_menu_list/', views.food_menu_list),
 

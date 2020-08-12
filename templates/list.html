@@ -8,14 +8,13 @@
             <thead>
                 <tr>
                     <th>번호</th>
-                    <th>제목</th>
-                    <th>내용</th>
+                    <th>음식점 이름</th>
+                    <th>후기</th>
                 </tr>
             </thead>
             <tbody>
                 {% for article in article_list %}
                 <tr>
-                <!-- <tr onclick='location="/article/detail/{{ article.id }}"'> -->
                     <td>{{ article.id }}</td>
                     <td>{{ article.title }}</button></td>
                     <td>{{ article.content }}</td>
