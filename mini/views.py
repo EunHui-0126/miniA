@@ -39,8 +39,6 @@ def list(request):
     return render(request,'list.html', context)
 
 def main(request):
-<<<<<<< HEAD
-=======
     address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
@@ -50,7 +48,6 @@ def main(request):
     return render(request,'index.html',{'a_list':a_list.get_text('\n')})
 
 def phone_data(request):
->>>>>>> 5c9c43cd0334f1a911a73dea62b366c83d9849f6
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
 
