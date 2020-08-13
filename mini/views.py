@@ -71,7 +71,7 @@ def main(request):
 #     context = {
 #         'article_list' : article_list
 #     }
-#     return render(request,'index.html', context)
+#     return render(request,'list.html', context)
 
 def main(request):
     address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
