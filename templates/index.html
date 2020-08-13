@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +9,19 @@
     <link rel="stylesheet" href="/static/css/templatemo-style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap | Pagination</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.10.2.min.js"></script>
+    <!-- <!DOCTYPE html>
+<html lang="ko">
+
+    <meta charset="euc-kr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap | Pagination</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.10.2.min.js"></script> -->
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {
@@ -34,6 +46,36 @@
             overflow: auto;
         }
     </style>
+    <script>
+        $(document).ready(function () {
+            $(".search").keyup(function () {
+                var searchTerm = $(".search").val();
+                var listItem = $('.results tbody').children('tr');
+                var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+
+                $.extend($.expr[':'], {
+                    'containsi': function (elem, i, match, array) {
+                        return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+                    }
+                });
+                $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function (e) {
+                    $(this).attr('visible', 'false');
+                });
+                $(".results tbody tr:containsi('" + searchSplit + "')").each(function (e) {
+                    $(this).attr('visible', 'true');
+                });
+
+                var jobCount = $('.results tbody tr[visible="true"]').length;
+                $('.counter').text(jobCount + ' item');
+
+                if (jobCount == '0') {
+                    $('.no-result').show();
+                } else {
+                    $('.no-result').hide();
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -58,44 +100,44 @@
             </div>
         </div>
 
-    </div>
-    <br>
-    
-    <div class="col-sm-9">
-      <div class="well">
-        <h1>{{r.restaurant}} {{r.food}}</h1>
-        <p>Some text..</p>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
-            <ul>
-                <div style="white-space: pre-line;font-size: 18px;">{{a_list}}</div>
-            </ul>
-          </div>
         </div>
-        <div class="col-sm-6">
-          <div class="well">
-            <h4>Pages</h4>
-            <p>100 Million</p> 
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <div class="jumbotron">
-                <div class="container text-center">
-                    <form method="post" action="/board/">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="title">음식점 이름</label>
-                            <input type="text" class="form-control" name="title" id="title">
-                        </div>
-                        <div class="form-group">
-                            <label for="content">후기</label>
-                            <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+        <br>
+
+        <div class="col-sm-9">
+            <div class="well">
+                <h1>{{r.restaurant}} {{r.food}}</h1>
+                <p>Some text..</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+                        <ul>
+                            <div style="white-space: pre-line;font-size: 18px;">{{a_list}}</div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h4>Pages</h4>
+                        <p>100 Million</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <div class="jumbotron">
+                            <div class="container text-center">
+                                <form method="post" action="/board/">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="title">음식점 이름</label>
+                                        <input type="text" class="form-control" name="title" id="title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="content">후기</label>
+                                        <textarea class="form-control" rows="5" name="content" id="content"></textarea>
 
     </nav>
 
@@ -142,60 +184,19 @@
             <div class="col-sm-9">
                 <div class="well">
                     <h4>오늘의 메뉴 추천</h4>
+
                     <head>
-    <title>Insert title here</title>
-    </head>
-    <SCRIPT LAUNGUAGE='JAVASCRIPT'>                     // 자바 스크립트 시작
-        function test() {                               // test라는 함수 정의
-            location.reload();
-        }
-    </SCRIPT>
-    
-    <body>
-    
-        <FORM>
-            <INPUT type='BUTTON' value='추천받기' onclick='test()'>
-        </FORM>
-    
-    </body>
-    
-    </html>
-                    <p>{{r.restaurant}} {{r.food}}</p>
-                    <img src="{{r.photo}}"/>
-                    <html>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="well">
-                            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
-                            <ul>
-                                <div style="white-space: pre-line; font-size: 18px;">{{a_list}}</p>
-                            </ul>
-                        </div>
-                    </div>
+                        <title>Insert title here</title>
+                    </head>
+                    <SCRIPT LAUNGUAGE='JAVASCRIPT'>                     // 자바 스크립트 시작
+                        function test() {                               // test라는 함수 정의
+                            location.reload();
+                        }
+                    </SCRIPT>
 
-                    <div class="col-sm-6">
-                        <div class="well">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>식당</th>
-                                        <th>전화번호</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for c in data %}
-                                    <tr>
-                                        <td>{{c.name}}</td>
-                                        <td>{{c.ph}}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                    <body>
 
+<<<<<<< HEAD
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="well">
@@ -223,189 +224,91 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="well">
+=======
+                        <FORM>
+                            <INPUT type='BUTTON' value='추천받기' onclick='test()'>
+                        </FORM>
+>>>>>>> 0d19abe332fac28946147480ecbbc461471672b8
 
+                    </body>
+
+</html>
+<p>{{r.restaurant}} {{r.food}}</p>
+<img src="{{r.photo}}" />
+<html>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="well">
+            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+            <ul>
+                <div style="white-space: pre-line; font-size: 18px;">{{a_list}}</p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="well">
+            <div class="form-group pull-right">
+                <input type="text" class="search form-control" placeholder="검색 단어입력">
+            </div>
+            <span class="counter pull-right"></span>
+            <table class="table table-hover table-bordered results">
+                <thead>
+                    <tr>
+                        <th>식당</th>
+                        <th>전화번호</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data %}
+                    <tr>
+                        <th scope="row">{{c.id}}</th>
+                        <td>{{c.name}}</td>
+                        <td>{{c.ph}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="well">
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <form method="post" action="/board/">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="title">음식점 이름</label>
+                            <input type="text" placeholder="ex) 피오르달리조" class="form-control" name="title" id="title">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="content">후기</label>
+                            <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+                        </div>
+                        <button type="submit" id="complete" class="btn btn-warning btn-block">
+                            글쓰기
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="well">
+
+        </div>
     </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-</body>
-
-</html>
-
-<!-- 
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Avalon full-width responsive template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/static/css/fontAwesome.css">
-    <link rel="stylesheet" href="/static/css/hero-slider.css">
-    <link rel="stylesheet" href="/static/css/owl-carousel.css">
-    <link rel="stylesheet" href="/static/css/datepicker.css">
-    <link rel="stylesheet" href="/static/css/templatemo-style.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-    <script src="/static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-</head>
-<style>
-    .col-md-5 {
-    overflow: scroll;
-    width: 500px;
-    height: 500px;
-    padding-right: 0;
-    }
-/* 
-    .col-md-8 {
-    width: 800px;
-    height: 500px;
-    }
-
-    .col-md-4 {
-    width: 200px;
-    height: 500px;
-    } */
-    </style>
-
-    <body>
-
-        <section class="banner" id="top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="left-banner-content">
-                            <div class="text-content">
-                                <h2>메뉴선택 쌉가능</h2>
-                                <div class="line-dec"></div>
-                                <h1 style="color : black">안동대 <br>뭐먹지?</h1>
-                                <div class="pink-border-button">
-                                    <a href="#" class="scroll-link" data-id="best-offer-section">Discover More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="right-banner-content">
-                            <ul>
-                                <p style="white-space: pre-line;">{{ a_list}}</p>
-                            </ul>
-                        </div>
-
-                </div>
-                <div class="col-md-4">
-                    <div class="right-banner-content">
-                        <p>"오늘의 학식 메뉴"</p>
-                        <ul>
-                            <p style="white-space: pre-line;">{{ a_list}}</p>
-                        </ul>
-
-                    </div>
-                    <div class="col-md-5">
-                        <table class="table table-bordered">
-
-                            <thead>
-                                <tr>
-                                    <th>식당</th>
-                                    <th>전화번호</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for c in data %}
-                                <tr>
-                                    <td>{{c.name}}</td>
-                                    <td>{{c.ph}}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="jumbotron">
-                            <div class="container text-center">
-                                <form method="post" action="/board/">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <label for="title">음식점 이름</label>
-                                        <input type="text" class="form-control" name="title" id="title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="content">후기</label>
-                                        <textarea class="form-control" rows="5" name="content" id="content"></textarea>
-                                    </div>
-                                    <button type="submit" id="complete" class="btn btn-warning btn-block">
-                                        글쓰기
-                                    </button>
-                                </form>
-                            </div>
-
-    <style>
- <style>
-
-        .container {
-            overflow: scroll;
-            width: 300px;
-            height: 200px;
-        }
-    </style> 
-
-    <section class="best-offer" id=best-offer-section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <table class="table table-bordered">
-                        
-                        <thead>
-                            <tr>
-                                <th>식당</th>
-                                <th>전화번호</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for c in data %}
-                            <tr>
-                                <td>{{c.name}}</td>
-                                <td>{{c.ph}}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-4">
-                    <div class="jumbotron">
-                        <div class="container text-center">
-                            <form method="post" action="/board/">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="title">음식점 이름</label>
-                                    <input type="text" class="form-control" name="title" id="title">
-                                </div>
-                                <div class="form-group">
-                                    <label for="content">후기</label>
-                                    <textarea class="form-control" rows="5" name="content" id="content"></textarea>
-                                </div>
-                                <button type="submit" id="complete" class="btn btn-warning btn-block">
-                                    글쓰기
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div> -->
-<!-- </section>
 </body>
 
 </html>
