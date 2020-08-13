@@ -11,6 +11,9 @@ from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from app.models import menu
 from django.forms.models import model_to_dict
+
+from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
+import datetime
 import requests
 from bs4 import BeautifulSoup as bs
 import random
