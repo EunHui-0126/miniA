@@ -11,6 +11,9 @@ from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from app.models import menu
 from django.forms.models import model_to_dict
+
+from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
+import datetime
 import requests
 from bs4 import BeautifulSoup as bs
 import random
@@ -44,18 +47,34 @@ def list(request):
 
 
 def main(request):
-    address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-13'
+    address = cur_date_address()
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
     data = phone.objects.all()
+    i=random.randint(1,43)
+    r=menu.objects.get(id=i)
+    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
+    
+def phone_data(request):
+    data = phone.objects.all()
+    return render(request,'index.html',{'data':data})
 
-    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data})
+def cur_date_address():
+    now = datetime.datetime.now()
+    nowDate = now.strftime('%Y-%m-%d')
+    parts = urlparse('http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12')
+    qs = dict(parse_qsl(parts.query))
+    qs['memo5'] = nowDate
+    parts = parts._replace(query=urlencode(qs))
+    address = urlunparse(parts)
+    return address
 
 
 def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
+<<<<<<< HEAD
     
 
 
@@ -64,3 +83,5 @@ def phone_data(request):
     return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
 
   
+=======
+>>>>>>> 32ea54644edc7c0813e223430f6002ed57fea32b
