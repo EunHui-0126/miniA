@@ -5,22 +5,24 @@
 <div class="jumbotron">
     <div class="container text-left">
         <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>음식점 이름</th>
-                    <th>후기</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for article in article_list %}
-                <tr>
-                    <td>{{ article.id }}</td>
-                    <td>{{ article.title }}</button></td>
-                    <td>{{ article.content }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+            <center>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>음식점 이름</th>
+                        <th>후기</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for article in article_list %}
+                    <tr>
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.title }}</button></td>
+                        <td>{{ article.content }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </center>
         </table>
     </div>
 </div>
