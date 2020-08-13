@@ -1,3 +1,4 @@
+{{r.restaurant}} {{r.food}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,9 @@
     /* On small screens, set height to 'auto' for the grid */
     @media screen and (max-width: 767px) {
       .row.content {height: auto;} 
+    }
+    .col-sm-9 .well{
+        height: 400px;
     }
     
   </style>
@@ -131,17 +135,6 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="well">
-            <p>Text</p> 
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="well">
-            <p>Text</p> 
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -175,35 +168,97 @@
 
     <script src="/static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
+<style>
+    .col-md-5 {
+    overflow: scroll;
+    width: 500px;
+    height: 500px;
+    padding-right: 0;
+    }
+/* 
+    .col-md-8 {
+    width: 800px;
+    height: 500px;
+    }
 
-<body>
+    .col-md-4 {
+    width: 200px;
+    height: 500px;
+    } */
+    </style>
 
-    <section class="banner" id="top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="left-banner-content">
-                        <div class="text-content">
-                            <h2>메뉴선택 쌉가능</h2>
-                            <div class="line-dec"></div>
-                            <h1 style="color : black">안동대 <br>뭐먹지?</h1>
-                            <div class="pink-border-button">
-                                <a href="#" class="scroll-link" data-id="best-offer-section">Discover More</a>
+    <body>
+
+        <section class="banner" id="top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="left-banner-content">
+                            <div class="text-content">
+                                <h2>메뉴선택 쌉가능</h2>
+                                <div class="line-dec"></div>
+                                <h1 style="color : black">안동대 <br>뭐먹지?</h1>
+                                <div class="pink-border-button">
+                                    <a href="#" class="scroll-link" data-id="best-offer-section">Discover More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="col-md-3">
+                        <div class="right-banner-content">
+                            <ul>
+                                <p style="white-space: pre-line;">{{ a_list}}</p>
+                            </ul>
+                        </div>
+=======
                 </div>
                 <div class="col-md-4">
                     <div class="right-banner-content">
                         <ul>
                             <p style="white-space: pre-line;">{{ a_list}}</p>
                         </ul>
+>>>>>>> 573c7583f72ed63ea4538ee6cf34af61f0db817f
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="col-md-5">
+                        <table class="table table-bordered">
 
+<<<<<<< HEAD
+                            <thead>
+                                <tr>
+                                    <th>식당</th>
+                                    <th>전화번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for c in data %}
+                                <tr>
+                                    <td>{{c.name}}</td>
+                                    <td>{{c.ph}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="jumbotron">
+                            <div class="container text-center">
+                                <form method="post" action="/board/">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="title">음식점 이름</label>
+                                        <input type="text" class="form-control" name="title" id="title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="content">후기</label>
+                                        <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+                                    </div>
+                                    <button type="submit" id="complete" class="btn btn-warning btn-block">
+                                        글쓰기
+                                    </button>
+                                </form>
+                            </div>
+=======
     <!-- <style>
         .container {
             overflow: scroll;
@@ -251,10 +306,10 @@
                                     글쓰기
                                 </button>
                             </form>
+>>>>>>> 573c7583f72ed63ea4538ee6cf34af61f0db817f
                         </div>
                     </div>
-                </div>
-                <!-- <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                     <div class="jumbotron">
                         <div class="container text-left">
                             <table class="table table-hover">
@@ -278,7 +333,7 @@
                         </div> -->
                     <!-- </div>
                 </div> -->
-    </section>
-</body>
+        </section>
+    </body>
 
 </html> -->
