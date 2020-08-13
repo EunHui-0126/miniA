@@ -15,6 +15,7 @@ from bs4 import BeautifulSoup as bs
 import random
 
 
+
 def board(request):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -68,7 +69,54 @@ def cur_date_address():
 
 def phone_data(request):
     data = phone.objects.all()
+    return render(request,'index.html',{'data':data})    
+
+
+    i=random.randint(1,43)
+    r=menu.objects.get(id=i)
+    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
+
+def base(request):
+
+    return render(request,'base.html')    
     return render(request,'index.html',{'data':data})
+
+def update(request, id):
+    # select * from article where id = ?
+    article = Article.objects.get(id=id)
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        try:
+            # update article set title = ?, content = ? where id = ?
+            article.title = title
+            article.content = content
+            article.save()
+            return render(request, 'update_success.html')
+        except:
+            return render(request, 'update_fail.html')
+    context = {
+        'article' : article
+    }
+    return render(request, 'update.html', context)
+
+
+def detail(request, id):
+# select * from article where id = ?
+    article = Article.objects.get(id=id)
+    context = {
+        'article' : article
+    }
+    return render(request, 'detail.html', context)
+
+def delete(request, id):
+    try:
+    # select * from article where id = ?
+        article = Article.objects.get(id=id)
+        article.delete()
+        return render(request, 'delete_success.html')
+    except:
+        return render(request, 'delete_fail.html')
     
 
 
