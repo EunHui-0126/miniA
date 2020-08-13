@@ -76,14 +76,13 @@ def main(request):
 def main(request):
 
     address = cur_date_address()
-
+    
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
     data = phone.objects.all()
     return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data})
 
-<<<<<<< HEAD
 def cur_date_address():
     now = datetime.datetime.now()
     nowDate = now.strftime('%Y-%m-%d')
@@ -94,10 +93,3 @@ def cur_date_address():
     address = urlunparse(parts)
 
     return address
-=======
-
-def phone_data(request):
-    data = phone.objects.all()
-    return render(request,'index.html',{'data':data})
-
->>>>>>> 573c7583f72ed63ea4538ee6cf34af61f0db817f
