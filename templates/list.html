@@ -16,11 +16,12 @@
                 {% for article in article_list %}
                 <tr>
                     <td>{{ article.id }}</td>
-                    <td>{{ article.title }}</button></td>
+                    <td>{{ article.title }}<a href="/detail/{{ article.id }}"><button type="submit">Detail</button></td></a>
                     <td>{{ article.content }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <a href="/main/"><button type="button" class="btn btn-warning" style="float: right;" >< Previous</button></a>
     </div>
 </div>
