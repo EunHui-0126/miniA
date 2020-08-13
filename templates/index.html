@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +30,7 @@
         }
 
         .col-sm-9 .well {
-            height: 400px;
+            height: 350px;
             overflow: auto;
         }
     </style>
@@ -55,6 +56,46 @@
                 </ul>
             </div>
         </div>
+
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well">
+        <h1>{{r.restaurant}} {{r.food}}</h1>
+        <p>Some text..</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+            <ul>
+                <div style="white-space: pre-line;font-size: 18px;">{{a_list}}</div>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <h4>Pages</h4>
+            <p>100 Million</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <form method="post" action="/board/">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="title">음식점 이름</label>
+                            <input type="text" class="form-control" name="title" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">후기</label>
+                            <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+
     </nav>
 
     <div class="container-fluid">
@@ -91,6 +132,7 @@
                                 <h3 style="color : black"> 박철형 </h3>
                                 <h3 style="color : black"> 문장혁 </h3>
                             </center>
+
                         </div>
                     </div>
                 </div>
@@ -99,6 +141,7 @@
 
             <div class="col-sm-9">
                 <div class="well">
+<<<<<<< HEAD
                     <h4>오늘의 메뉴 추천</h4>
                     <p>{{r.id}} {{r.restaurant}} {{r.food}}</p>
                     <script type="text/javascript">
@@ -126,6 +169,8 @@
                     <img id="introImg" border="0">
                     <!-- <img src="../static/img/1.jpg" width="500px" height="400px"></a> -->
                     
+=======
+>>>>>>> d6f91289b33a8c4b8d1e3d3218d936bbeeb94a2c
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
@@ -168,7 +213,7 @@
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <label for="title">음식점 이름</label>
-                                            <input type="text" class="form-control" name="title" id="title">
+                                            <input type="text"  placeholder="ex) 피오르달리조" class="form-control" name="title" id="title">
                                         </div>
                                         <div class="form-group">
                                             <label for="content">후기</label>
@@ -178,6 +223,7 @@
                                         <button type="submit" id="complete" class="btn btn-warning btn-block">
                                             글쓰기
                                         </button>
+                           
                                     </form>
                                 </div>
                             </div>
