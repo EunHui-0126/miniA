@@ -70,6 +70,3 @@ def cur_date_address():
 def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
-    
-
-
