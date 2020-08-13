@@ -48,5 +48,5 @@ def main(request):
     print(a_list.get_text('\n'))
     return render(request,'index.html',{'a_list':a_list.get_text('\n'),'data':data})
 
-def rand(request):
-    i=random.(1,43)
+# def rand(request):
+#     i=random.(1,43)
