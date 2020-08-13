@@ -18,8 +18,4 @@ class phone(models.Model):
 class Point(models.Model):
     title = models.CharField(max_length=100)
     lat = models.FloatField()
-<<<<<<< HEAD
     lng = models.FloatField()
-=======
-    lng = models.FloatField()
->>>>>>> 30d4ca4331f6e3e6b9cf0d563d905a3791c5e49c

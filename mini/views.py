@@ -14,10 +14,6 @@ from bs4 import BeautifulSoup as bs
 import random
 from app.models import Point
 from django.forms.models import model_to_dict
-<<<<<<< HEAD
-
-=======
->>>>>>> 30d4ca4331f6e3e6b9cf0d563d905a3791c5e49c
 
 
 
