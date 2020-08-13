@@ -50,20 +50,13 @@ def main(request):
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
     data = phone.objects.all()
-
-    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data})
-
-
-def phone_data(request):
-    data = phone.objects.all()
-    return render(request,'index.html',{'data':data})
-    
-
-
     i=random.randint(1,43)
     r=menu.objects.get(id=i)
     return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
 
+def phone_data(request):
+    data = phone.objects.all()
+    return render(request,'index.html',{'data':data})
 
 def cur_date_address():
     now = datetime.datetime.now()
