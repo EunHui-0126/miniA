@@ -270,7 +270,81 @@
     </div>
     <div class="col-sm-6">
         <div class="well">
-
+            <div class="well">
+                <div class="jumbotron">
+                  <div class="container text-center">
+                    <div id="map" style="width: 600px; height:500px; margin:0 auto;"></div>
+                  </div>
+                </div>
+                <!-- 위도/경도를 실시간으로 알아내는 코드로 바꿔보기-->
+                <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=20de334a212ac9b1dbd19f4a3008b244"></script>
+                <script>
+                  navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                      var lat = position.coords.latitude;
+                      var lng = position.coords.longitude;
+                      //alert(lat + ', ' + lng);
+  
+  
+                      var container = document.getElementById('map');
+                      var options = {
+                        center: new kakao.maps.LatLng(lat, lng), // 안동대학교 위도/경도
+                        level: 3
+                      };
+                      var map = new kakao.maps.Map(container, options);
+                      var markerPosition = new kakao.maps.LatLng(lat, lng);
+                      var marker = new kakao.maps.Marker({
+                        position: markerPosition
+                      });
+                      marker.setMap(map);
+  
+  
+                      $.ajax({
+                        url: '/map_data/',
+                        data: {
+                          'lat': lat, 'lng': lng
+                        },
+                        success: function (res) {
+                          for (var i = 0; i < res.length; i++) {
+                            var marker = new kakao.maps.Marker({
+                              map: map, // 마커를 표시할 지도
+                              position: new kakao.maps.LatLng(res[i].lat, res[i].lng),
+                              title: res[i].title,
+                            });
+                          }
+                        }
+                      });
+  
+  
+                      // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+                      var iwContent = '<div style="padding:5px;">Hello World!</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+  
+  
+                      // 인포윈도우를 생성합니다
+                      var infowindow = new kakao.maps.InfoWindow({
+                        content: iwContent
+                      });
+  
+  
+                      // 마커에 마우스오버 이벤트를 등록합니다
+                      kakao.maps.event.addListener(marker, 'mouseover', function () {
+                        // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+                        infowindow.open(map, marker);
+                      });
+  
+  
+                      // 마커에 마우스아웃 이벤트를 등록합니다
+                      kakao.maps.event.addListener(marker, 'mouseout', function () {
+                        // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+                        infowindow.close();
+                      });
+  
+  
+                    });
+  
+  
+                </script>
+              </div>
         </div>
     </div>
 </div>
