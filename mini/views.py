@@ -47,6 +47,7 @@ def main(request):
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
+    
     data = phone.objects.all()
     i=random.randint(1,43)
     r=menu.objects.get(id=i)
@@ -69,17 +70,10 @@ def cur_date_address():
 
 def phone_data(request):
     data = phone.objects.all()
-    return render(request,'index.html',{'data':data})    
-
-
-    i=random.randint(1,43)
-    r=menu.objects.get(id=i)
-    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
+    return render(request,'index.html',{'data':data})
 
 def base(request):
-
-    return render(request,'base.html')    
-    return render(request,'index.html',{'data':data})
+    return render(request,'base.html')
 
 def update(request, id):
     # select * from article where id = ?
@@ -117,6 +111,3 @@ def delete(request, id):
         return render(request, 'delete_success.html')
     except:
         return render(request, 'delete_fail.html')
-    
-
-
