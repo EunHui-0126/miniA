@@ -103,6 +103,10 @@
           <div class="well">
             <h4>Users</h4>
             <p>1 Million</p> 
+            <u>"오늘의 학식 메뉴"</u>
+            <ul>
+                <p style="white-space: pre-line;">{{ a_list}}</p>
+            </ul>
           </div>
         </div>
         <div class="col-sm-6">
@@ -195,14 +199,6 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-                    <div class="col-md-3">
-                        <div class="right-banner-content">
-                            <ul>
-                                <p style="white-space: pre-line;">{{ a_list}}</p>
-                            </ul>
-                        </div>
-=======
                 </div>
                 <div class="col-md-4">
                     <div class="right-banner-content">
@@ -210,47 +206,10 @@
                         <ul>
                             <p style="white-space: pre-line;">{{ a_list}}</p>
                         </ul>
->>>>>>> 573c7583f72ed63ea4538ee6cf34af61f0db817f
                     </div>
                     <div class="col-md-5">
                         <table class="table table-bordered">
 
-<<<<<<< HEAD
-                            <thead>
-                                <tr>
-                                    <th>식당</th>
-                                    <th>전화번호</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for c in data %}
-                                <tr>
-                                    <td>{{c.name}}</td>
-                                    <td>{{c.ph}}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="jumbotron">
-                            <div class="container text-center">
-                                <form method="post" action="/board/">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <label for="title">음식점 이름</label>
-                                        <input type="text" class="form-control" name="title" id="title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="content">후기</label>
-                                        <textarea class="form-control" rows="5" name="content" id="content"></textarea>
-                                    </div>
-                                    <button type="submit" id="complete" class="btn btn-warning btn-block">
-                                        글쓰기
-                                    </button>
-                                </form>
-                            </div>
-=======
     <!-- <style>
         .container {
             overflow: scroll;
@@ -298,7 +257,6 @@
                                     글쓰기
                                 </button>
                             </form>
->>>>>>> 573c7583f72ed63ea4538ee6cf34af61f0db817f
                         </div>
                     </div>
                     <!-- <div class="col-md-4">
