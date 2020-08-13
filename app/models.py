@@ -14,4 +14,3 @@ class Article(models.Model):
 class phone(models.Model):
     name =  models.CharField(max_length=50)
     ph =  models.CharField(max_length=50)
-
