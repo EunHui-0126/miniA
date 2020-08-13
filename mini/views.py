@@ -11,51 +11,14 @@ from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from app.models import menu
 from django.forms.models import model_to_dict
-<<<<<<< HEAD
-from app.models import Article
 
-from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
-import datetime
-import requests
-from bs4 import BeautifulSoup as bs
 
-def main(request):
-    return render(request,'base.html')
-
-def board(request):
-    if request.method == 'POST':
-        title = request.POST.get('title')
-        content = request.POST.get('content')
-        try:
-            # email = request.session['email']
-            # # select * from user where email = ?
-            # user = User.objects.get(email=email)
-            # # insert into article (title, content, user_id) values (?, ?, ?)
-            article = Article(title=title, content=content)
-            article.save()
-            return redirect('/list')
-        except:
-            return render(request, 'base.html')
-    # return render(request, 'write.html')
-    return render(request,'create.html')
-
-def list(request):
-    article_list = Article.objects.order_by('-id')
-    print(article_list)
-    context = {
-        'article_list' : article_list
-    }
-    return render(request,'list.html', context)
-
-def main(request):
-    return render(request,'base.html')
-=======
 import requests
 from bs4 import BeautifulSoup as bs
 import random
 
-
->>>>>>> 669f825ac2ce0048f34235eff4f71c6bfe099675
+import datetime
+from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
 # def board(request):
 #     if request.method == 'POST':
