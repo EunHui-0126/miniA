@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup as bs
 import random
 
 
+
 def board(request):
     if request.method == 'POST':
         title = request.POST.get('title')
