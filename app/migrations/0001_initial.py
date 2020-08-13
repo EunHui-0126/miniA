@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('restaurant', models.CharField(max_length=50)),
                 ('food', models.CharField(max_length=50)),
+                ('photo', models.CharField(max_length=50)),
             ],
         ),
     ]
