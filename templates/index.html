@@ -139,16 +139,36 @@
                 </div>
             </div>
             <br>
-
             <div class="col-sm-9">
                 <div class="well">
+                    <h4>오늘의 메뉴 추천</h4>
+                    <head>
+    <title>Insert title here</title>
+    </head>
+    <SCRIPT LAUNGUAGE='JAVASCRIPT'>                     // 자바 스크립트 시작
+        function test() {                               // test라는 함수 정의
+            location.reload();
+        }
+    </SCRIPT>
+    
+    <body>
+    
+        <FORM>
+            <INPUT type='BUTTON' value='추천받기' onclick='test()'>
+        </FORM>
+    
+    </body>
+    
+    </html>
+                    <p>{{r.restaurant}} {{r.food}}</p>
+                    <html>
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="well">
                             <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
                             <ul>
-                                <p style="white-space: pre-line">{{a_list}}</p>
+                                <div style="white-space: pre-line; font-size: 18px;">{{a_list}}</p>
                             </ul>
                         </div>
                     </div>
