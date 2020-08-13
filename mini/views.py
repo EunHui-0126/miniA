@@ -61,3 +61,6 @@ def phone_data(request):
     i=random.randint(1,43)
     r=menu.objects.get(id=i)
     return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
+
+def map(request):
+    return render(request, 'main.html')
