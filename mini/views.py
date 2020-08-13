@@ -1,9 +1,5 @@
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-
-
-from django.shortcuts import render, redirect
-
 from django.shortcuts import render, redirect
 from app.models import Article
 from django.shortcuts import render
@@ -20,30 +16,6 @@ import random
 import datetime
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
-# def board(request):
-#     if request.method == 'POST':
-#         title = request.POST.get('title')
-#         content = request.POST.get('content')
-#         try:
-#             # email = request.session['email']
-#             # # select * from user where email = ?
-#             # user = User.objects.get(email=email)
-#             # # insert into article (title, content, user_id) values (?, ?, ?)
-#             article = Article(title=title, content=content)
-#             article.save()
-#             return redirect('/list')
-#         except:
-#             return render(request, 'base.html')
-#     # return render(request, 'write.html')
-#     return render(request,'create.html')
-
-# def list(request):
-#     article_list = Article.objects.order_by('-id')
-#     print(article_list)
-#     context = {
-#         'article_list' : article_list
-#     }
-#     return render(request,'list.html', context)
 
 
 def main(request):
