@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +29,19 @@
       }
     }
 
+<<<<<<< HEAD
     .col-sm-9 .well {
       height: 400px;
       overflow: auto;
     }
   </style>
+=======
+        .col-sm-9 .well {
+            height: 350px;
+            overflow: auto;
+        }
+    </style>
+>>>>>>> 8782f6d013e5007a2e1828b4d8d7154d0753c367
 </head>
 
 <body>
@@ -79,6 +88,7 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
 
       <div class="col-sm-9">
@@ -128,6 +138,122 @@
                     <div class="form-group">
                       <label for="title">음식점 이름</label>
                       <input type="text" class="form-control" name="title" id="title">
+=======
+
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well">
+        <h1>{{r.restaurant}} {{r.food}}</h1>
+        <p>Some text..</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+            <ul>
+                <div style="white-space: pre-line;font-size: 18px;">{{a_list}}</div>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <h4>Pages</h4>
+            <p>100 Million</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <form method="post" action="/board/">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="title">음식점 이름</label>
+                            <input type="text" class="form-control" name="title" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">후기</label>
+                            <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidesidenav hidden-xs">
+                <div class="col-md-11">
+                    <div class="left-banner-content">
+                        <div class="text-content" style="margin-left : -150px;">
+                            <center>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <h3>메뉴선택 쌉가능</h3>
+                                <div class="line-dec"></div>
+                                <h1 style="color : black">안동대 <br>뭐먹지?</h1>
+                                <br>
+                                <h3 style="color : black"> 혁신성장 청년인재 </h3>
+                                <h3 style="color : black"> 스마트팩토리 SW 개발자 양성과정</h3>
+                                <h3 style="color : black"> 미니프로젝트 3조</h3>
+                                <h3 style="color : black"> 이환희 </h3>
+                                <h3 style="color : black"> 정은희 </h3>
+                                <h3 style="color : black"> 박철형 </h3>
+                                <h3 style="color : black"> 문장혁 </h3>
+                            </center>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-9">
+                <div class="well">
+                    <h4>오늘의 메뉴 추천</h4>
+                    <head>
+    <title>Insert title here</title>
+    </head>
+    <SCRIPT LAUNGUAGE='JAVASCRIPT'>                     // 자바 스크립트 시작
+        function test() {                               // test라는 함수 정의
+            location.reload();
+        }
+    </SCRIPT>
+    
+    <body>
+    
+        <FORM>
+            <INPUT type='BUTTON' value='추천받기' onclick='test()'>
+        </FORM>
+    
+    </body>
+    
+    </html>
+                    <p>{{r.restaurant}} {{r.food}}</p>
+                    <html>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="well">
+                            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+                            <ul>
+                                <div style="white-space: pre-line; font-size: 18px;">{{a_list}}</p>
+                            </ul>
+                        </div>
+>>>>>>> 8782f6d013e5007a2e1828b4d8d7154d0753c367
                     </div>
                     <div class="form-group">
                       <label for="content">후기</label>
@@ -143,10 +269,43 @@
           </div>
           <div class="col-sm-6">
 
+<<<<<<< HEAD
             <div class="well">
               <div class="jumbotron">
                 <div class="container text-center">
                   <div id="map" style="width: 420px; height:250px; margin:0 auto;"></div>
+=======
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="well">
+                            <div class="jumbotron">
+                                <div class="container text-center">
+                                    <form method="post" action="/board/">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="title">음식점 이름</label>
+                                            <input type="text"  placeholder="ex) 피오르달리조" class="form-control" name="title" id="title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="content">후기</label>
+                                            <textarea class="form-control" rows="5" name="content"
+                                                id="content"></textarea>
+                                        </div>
+                                        <button type="submit" id="complete" class="btn btn-warning btn-block">
+                                            글쓰기
+                                        </button>
+                           
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="well">
+
+                        </div>
+                    </div>
+>>>>>>> 8782f6d013e5007a2e1828b4d8d7154d0753c367
                 </div>
               </div>
             </div>

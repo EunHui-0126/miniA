@@ -5,6 +5,7 @@
 <div class="jumbotron">
     <div class="container text-left">
         <table class="table table-hover">
+<<<<<<< HEAD
             <center>
                 <thead>
                     <tr>
@@ -23,6 +24,25 @@
                     {% endfor %}
                 </tbody>
             </center>
+=======
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>음식점 이름</th>
+                    <th>후기</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in article_list %}
+                <tr>
+                    <td>{{ article.id }}</td>
+                    <td>{{ article.title }}<a href="/detail/{{ article.id }}"><button type="submit">Detail</button></td></a>
+                    <td>{{ article.content }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+>>>>>>> 8782f6d013e5007a2e1828b4d8d7154d0753c367
         </table>
+        <a href="/main/"><button type="button" class="btn btn-warning" style="float: right;" >< Previous</button></a>
     </div>
 </div>

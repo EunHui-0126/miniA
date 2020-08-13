@@ -17,6 +17,7 @@ from app.models import Point
 from django.forms.models import model_to_dict
 
 
+
 def board(request):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -48,6 +49,7 @@ def main(request):
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
+    
     data = phone.objects.all()
     i=random.randint(1,43)
     r=menu.objects.get(id=i)
@@ -83,3 +85,42 @@ def map_data(request):
         map_list.append(d)
     # dict가 아닌 자료는 항상 safe=False 옵션 사용
     return JsonResponse(map_list, safe=False)
+def base(request):
+    return render(request,'base.html')
+
+def update(request, id):
+    # select * from article where id = ?
+    article = Article.objects.get(id=id)
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        try:
+            # update article set title = ?, content = ? where id = ?
+            article.title = title
+            article.content = content
+            article.save()
+            return render(request, 'update_success.html')
+        except:
+            return render(request, 'update_fail.html')
+    context = {
+        'article' : article
+    }
+    return render(request, 'update.html', context)
+
+
+def detail(request, id):
+# select * from article where id = ?
+    article = Article.objects.get(id=id)
+    context = {
+        'article' : article
+    }
+    return render(request, 'detail.html', context)
+
+def delete(request, id):
+    try:
+    # select * from article where id = ?
+        article = Article.objects.get(id=id)
+        article.delete()
+        return render(request, 'delete_success.html')
+    except:
+        return render(request, 'delete_fail.html')
