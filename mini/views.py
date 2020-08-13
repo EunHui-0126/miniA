@@ -15,8 +15,6 @@ import requests
 from bs4 import BeautifulSoup as bs
 import random
 
-import datetime
-from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 
 def board(request):
     if request.method == 'POST':
@@ -53,7 +51,7 @@ def main(request):
     i=random.randint(1,43)
     r=menu.objects.get(id=i)
     return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
-
+    
 def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
@@ -66,5 +64,9 @@ def cur_date_address():
     qs['memo5'] = nowDate
     parts = parts._replace(query=urlencode(qs))
     address = urlunparse(parts)
-
     return address
+
+
+def phone_data(request):
+    data = phone.objects.all()
+    return render(request,'index.html',{'data':data})
