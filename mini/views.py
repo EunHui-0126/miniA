@@ -70,7 +70,7 @@ def list(request):
     return render(request,'list.html', context)
 
 def main(request):
-    address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-12'
+    address = 'http://www.andong.ac.kr/main/module/foodMenu/view.do?manage_idx=21&memo5=2020-08-13'
     res = requests.get(address)
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
