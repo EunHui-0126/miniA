@@ -35,8 +35,7 @@
     </style>
 </head>
 
-<body>
-
+<body onload="showImage()">
     <nav class="navbar navbar-inverse visible-xs">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -101,7 +100,32 @@
             <div class="col-sm-9">
                 <div class="well">
                     <h4>오늘의 메뉴 추천</h4>
-                    <p>{{r.restaurant}} {{r.food}}</p>
+                    <p>{{r.id}} {{r.restaurant}} {{r.food}}</p>
+                    <script type="text/javascript">
+                        var imgArray= new Array();
+                        imgArray[1]="../static/img/1.jpg";  
+                        imgArray[2]="../static/img/2.jpg"; 
+                        imgArray[3]="../static/img/3.jpg";    
+                        imgArray[4]="../static/img/상수리제육.jpg";
+                        imgArray[5]="../static/img/상수리닭.jpg";
+                        imgArray[6]="../static/img/상수리된장.jpg";
+                        imgArray[7]="../static/img/원마인드고치돈.jpg";
+                        imgArray[8]="../static/img/갈릭치즈돈까스.jpg";  
+                        imgArray[9]="../static/img/카레우동.jpg";
+                        imgArray[10]="../static/img/짜장.jpg";
+                        imgArray[11]="../static/img/짬뽕.jpg";
+                        imgArray[11]="../static/img/볶음밥.jpg";
+                        function showImage()
+                        {
+                            // var imgNum=Math.round(Math.random()*8);
+                            var objImg=document.getElementById("introImg");
+                            // objImg.src=imgArray[imgNum];
+                            objImg.src=imgArray[r.id];
+                        }
+                    </script>
+                    <img id="introImg" border="0">
+                    <!-- <img src="../static/img/1.jpg" width="500px" height="400px"></a> -->
+                    
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
