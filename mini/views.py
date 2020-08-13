@@ -14,7 +14,10 @@ from bs4 import BeautifulSoup as bs
 import random
 from app.models import Point
 from django.forms.models import model_to_dict
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30d4ca4331f6e3e6b9cf0d563d905a3791c5e49c
 
 
 
@@ -74,6 +77,17 @@ def phone_data(request):
     data = phone.objects.all()
     return render(request,'index.html',{'data':data})
 
+def map(request):
+    return render(request, 'main.html')
+
+def map_data(request):
+    data = Point.objects.all()
+    map_list = []
+    for d in data:
+        d = model_to_dict(d) # QuerySet -> Dict
+        map_list.append(d)
+    # dict가 아닌 자료는 항상 safe=False 옵션 사용
+    return JsonResponse(map_list, safe=False)
 def base(request):
     return render(request,'base.html')
 
