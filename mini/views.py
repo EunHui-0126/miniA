@@ -9,7 +9,9 @@ from app.models import Article
 from django.shortcuts import render
 from django.http import JsonResponse # JSON 응답
 from app.models import phone
+from app.models import menu
 from django.forms.models import model_to_dict
+<<<<<<< HEAD
 from app.models import Article
 
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
@@ -47,6 +49,13 @@ def list(request):
 
 def main(request):
     return render(request,'base.html')
+=======
+import requests
+from bs4 import BeautifulSoup as bs
+import random
+
+
+>>>>>>> 669f825ac2ce0048f34235eff4f71c6bfe099675
 
 # def board(request):
 #     if request.method == 'POST':
@@ -73,6 +82,7 @@ def main(request):
 #     }
 #     return render(request,'list.html', context)
 
+
 def main(request):
 
     address = cur_date_address()
@@ -81,7 +91,9 @@ def main(request):
     soup = bs(res.text,'html.parser')
     a_list = soup.select_one('dl:nth-child(2)')
     data = phone.objects.all()
-    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data})
+    i=random.randint(1,43)
+    r=menu.objects.get(id=i)
+    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
 
 def cur_date_address():
     now = datetime.datetime.now()
@@ -93,3 +105,4 @@ def cur_date_address():
     address = urlunparse(parts)
 
     return address
+    
