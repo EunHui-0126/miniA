@@ -1,400 +1,231 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 1922fca158665b860902eac59b08fbf1423d7a93
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/templatemo-style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {
-            height: 550px
-        }
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/templatemo-style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+      height: 550px
+    }
 
-        /* Set gray background color and 100% height */
-        .sidenav {
-            background-color: #f1f1f1;
-            height: 200%;
-        }
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 200%;
+    }
 
-        /* On small screens, set height to 'auto' for the grid */
-        @media screen and (max-width: 767px) {
-            .row.content {
-                height: auto;
-            }
-        }
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {
+        height: auto;
+      }
+    }
 
-        .col-sm-9 .well {
-            height: 400px;
-            overflow: auto;
-        }
-    </style>
+    .col-sm-9 .well {
+      height: 400px;
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse visible-xs">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Logo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Dashboard</a></li>
-                    <li><a href="#">Age</a></li>
-                    <li><a href="#">Gender</a></li>
-                    <li><a href="#">Geo</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+  <nav class="navbar navbar-inverse visible-xs">
     <div class="container-fluid">
-        <div class="row content">
-            <div class="col-sm-3 sidesidenav hidden-xs">
-                <div class="col-md-11">
-                    <div class="left-banner-content">
-                        <div class="text-content" style="margin-left : -150px;">
-                            <center>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <h3>메뉴선택 쌉가능</h3>
-                                <div class="line-dec"></div>
-                                <h1 style="color : black">안동대 <br>뭐먹지?</h1>
-                                <br>
-                                <h3 style="color : black"> 혁신성장 청년인재 </h3>
-                                <h3 style="color : black"> 스마트팩토리 SW 개발자 양성과정</h3>
-                                <h3 style="color : black"> 미니프로젝트 3조</h3>
-                                <h3 style="color : black"> 이환희 </h3>
-                                <h3 style="color : black"> 정은희 </h3>
-                                <h3 style="color : black"> 박철형 </h3>
-                                <h3 style="color : black"> 문장혁 </h3>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Dashboard</a></li>
+          <li><a href="#">Age</a></li>
+          <li><a href="#">Gender</a></li>
+          <li><a href="#">Geo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-          <div class="well">
-            <div class="jumbotron">
-              <div class="container text-center">
-                  <div id="map" style="width:500px; height:400px; margin:0 auto;"></div>
-              </div>
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidesidenav hidden-xs">
+        <div class="col-md-11">
+          <div class="left-banner-content">
+            <div class="text-content" style="margin-top: 4rem;">
+              <img src="/static/img/RS2435tq.jpg" style="width:200px" alt="">
+                <h3>메뉴선택 쌉가능</h3>
+                <div class="line-dec"></div>
+                <h1 style="color : black">안동대 <br>뭐먹지?</h1>
+                <br>
+                <h3 style="color : black"> 혁신성장 청년인재 </h3>
+                <h3 style="color : black"> 스마트팩토리 SW 개발자 양성과정</h3>
+                <h3 style="color : black"> 미니프로젝트 3조</h3>
+                <h3 style="color : black"> 이환희 </h3>
+                <h3 style="color : black"> 정은희 </h3>
+                <h3 style="color : black"> 박철형 </h3>
+                <h3 style="color : black"> 문장혁 </h3>
+            </div>
           </div>
-          <!-- 위도/경도를 실시간으로 알아내는 코드로 바꿔보기-->
-          <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=20de334a212ac9b1dbd19f4a3008b244"></script>
-          <script>
-              navigator.geolocation.getCurrentPosition(
-                  function(position) {
-                     var lat = position.coords.latitude;
-                     var lng = position.coords.longitude;
-                     //alert(lat + ', ' + lng);
-          
-              var container = document.getElementById('map');
-              var options = {
-                  center: new kakao.maps.LatLng(lat, lng), // 안동대학교 위도/경도
-                  level: 5
-              };
-              var map = new kakao.maps.Map(container, options);
-              var markerPosition = new kakao.maps.LatLng(lat, lng);
+        </div>
+      </div>
+
+      <div class="col-sm-9">
+        <div class="well">
+          <h4>오늘의 메뉴 추천</h4>
+          <p>{{r.restaurant}} {{r.food}}</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+              <ul>
+                <p style="white-space: pre-line">{{a_list}}</p>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="well">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>식당</th>
+                    <th>전화번호</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for c in data %}
+                  <tr>
+                    <td>{{c.name}}</td>
+                    <td>{{c.ph}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+              <div class="jumbotron">
+                <div class="container text-center">
+                  <form method="post" action="/board/">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="title">음식점 이름</label>
+                      <input type="text" class="form-control" name="title" id="title">
+                    </div>
+                    <div class="form-group">
+                      <label for="content">후기</label>
+                      <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+                    </div>
+                    <button type="submit" id="complete" class="btn btn-warning btn-block">
+                      글쓰기
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+
+            <div class="well">
+              <div class="jumbotron">
+                <div class="container text-center">
+                  <div id="map" style="width: 420px; height:250px; margin:0 auto;"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- 위도/경도를 실시간으로 알아내는 코드로 바꿔보기-->
+  <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=20de334a212ac9b1dbd19f4a3008b244"></script>
+  <script>
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        //alert(lat + ', ' + lng);
+
+        var container = document.getElementById('map');
+        var options = {
+          center: new kakao.maps.LatLng(lat, lng), // 안동대학교 위도/경도
+          level: 3
+        };
+        var map = new kakao.maps.Map(container, options);
+        var markerPosition = new kakao.maps.LatLng(lat, lng);
+        var marker = new kakao.maps.Marker({
+          position: markerPosition
+        });
+        marker.setMap(map);
+
+        $.ajax({
+          url: '/map_data/',
+          data: {
+            'lat': lat, 'lng': lng
+          },
+          success: function (res) {
+            for (var i = 0; i < res.length; i++) {
               var marker = new kakao.maps.Marker({
-                  position: markerPosition
+                // map: map, // 마커를 표시할 지도
+                position: new kakao.maps.LatLng(res[i].lat, res[i].lng),
+                title: res[i].title,
               });
               marker.setMap(map);
-          
-              $.ajax({
-                  url: '/map_data/',
-                  data: {
-                      'lat':lat, 'lng':lng
-                  },
-                  success: function (res) {
-                      for (var i = 0; i < res.length; i++) {
-                          var marker = new kakao.maps.Marker({
-                              map: map, // 마커를 표시할 지도
-                              position: new kakao.maps.LatLng(res[i].lat, res[i].lng),
-                              title: res[i].title,
-                          });
-                      }
-                  }
+
+              // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+              var iwContent = '<span style="background-color:red;">Hello World!</span>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+              var iwPosition = new kakao.maps.LatLng(res[i].lat, res[i].lng);
+              // 인포윈도우를 생성합니다
+              var infowindow = new kakao.maps.InfoWindow({
+                content: iwContent,
+                position : iwPosition
               });
-          });
-          
-          </script>
-          </div>
-        </div>
-            <div class="col-sm-9">
-                <div class="well">
-                    <h4>오늘의 메뉴 추천</h4>
-                    <p>{{r.restaurant}} {{r.food}}</p>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="well">
-                            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
-                            <ul>
-                                <p style="white-space: pre-line">{{a_list}}</p>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-6">
-                        <div class="well">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>식당</th>
-                                        <th>전화번호</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for c in data %}
-                                    <tr>
-                                        <td>{{c.name}}</td>
-                                        <td>{{c.ph}}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+              // 마커에 마우스오버 이벤트를 등록합니다
+              kakao.maps.event.addListener(marker, 'click', function () {
+                // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+                infowindow.open(map, marker);
+              });
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="well">
-                            <div class="jumbotron">
-                                <div class="container text-center">
-                                    <form method="post" action="/board/">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <label for="title">음식점 이름</label>
-                                            <input type="text" class="form-control" name="title" id="title">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="content">후기</label>
-                                            <textarea class="form-control" rows="5" name="content"
-                                                id="content"></textarea>
-                                        </div>
-                                        <button type="submit" id="complete" class="btn btn-warning btn-block">
-                                            글쓰기
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="well">
+              // 마커에 마우스아웃 이벤트를 등록합니다
+              // kakao.maps.event.addListener(marker, 'mouseout', function () {
+              //   // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+              //   infowindow.close();
+              // });
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
 
-</body>
+            }
 
-</html>
 
-<!-- 
+          }
+        });
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Avalon full-width responsive template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/static/css/fontAwesome.css">
-    <link rel="stylesheet" href="/static/css/hero-slider.css">
-    <link rel="stylesheet" href="/static/css/owl-carousel.css">
-    <link rel="stylesheet" href="/static/css/datepicker.css">
-    <link rel="stylesheet" href="/static/css/templatemo-style.css">
+      });
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  </script>
 
-    <script src="/static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-</head>
-<style>
-    .col-md-5 {
-    overflow: scroll;
-    width: 500px;
-    height: 500px;
-    padding-right: 0;
-    }
-/* 
-    .col-md-8 {
-    width: 800px;
-    height: 500px;
-    }
-
-    .col-md-4 {
-    width: 200px;
-    height: 500px;
-    } */
-    </style>
-
-    <body>
-
-        <section class="banner" id="top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="left-banner-content">
-                            <div class="text-content">
-                                <h2>메뉴선택 쌉가능</h2>
-                                <div class="line-dec"></div>
-                                <h1 style="color : black">안동대 <br>뭐먹지?</h1>
-                                <div class="pink-border-button">
-                                    <a href="#" class="scroll-link" data-id="best-offer-section">Discover More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="right-banner-content">
-                            <ul>
-                                <p style="white-space: pre-line;">{{ a_list}}</p>
-                            </ul>
-                        </div>
-
-                </div>
-                <div class="col-md-4">
-                    <div class="right-banner-content">
-                        <p>"오늘의 학식 메뉴"</p>
-                        <ul>
-                            <p style="white-space: pre-line;">{{ a_list}}</p>
-                        </ul>
-
-                    </div>
-                    <div class="col-md-5">
-                        <table class="table table-bordered">
-
-                            <thead>
-                                <tr>
-                                    <th>식당</th>
-                                    <th>전화번호</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for c in data %}
-                                <tr>
-                                    <td>{{c.name}}</td>
-                                    <td>{{c.ph}}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="jumbotron">
-                            <div class="container text-center">
-                                <form method="post" action="/board/">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <label for="title">음식점 이름</label>
-                                        <input type="text" class="form-control" name="title" id="title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="content">후기</label>
-                                        <textarea class="form-control" rows="5" name="content" id="content"></textarea>
-                                    </div>
-                                    <button type="submit" id="complete" class="btn btn-warning btn-block">
-                                        글쓰기
-                                    </button>
-                                </form>
-                            </div>
-
-    <style>
- <style>
-
-        .container {
-            overflow: scroll;
-            width: 300px;
-            height: 200px;
-        }
-    </style> 
-
-    <section class="best-offer" id=best-offer-section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <table class="table table-bordered">
-                        
-                        <thead>
-                            <tr>
-                                <th>식당</th>
-                                <th>전화번호</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for c in data %}
-                            <tr>
-                                <td>{{c.name}}</td>
-                                <td>{{c.ph}}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-4">
-                    <div class="jumbotron">
-                        <div class="container text-center">
-                            <form method="post" action="/board/">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="title">음식점 이름</label>
-                                    <input type="text" class="form-control" name="title" id="title">
-                                </div>
-                                <div class="form-group">
-                                    <label for="content">후기</label>
-                                    <textarea class="form-control" rows="5" name="content" id="content"></textarea>
-                                </div>
-                                <button type="submit" id="complete" class="btn btn-warning btn-block">
-                                    글쓰기
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div> -->
-<!-- </section>
 </body>
 
 </html>

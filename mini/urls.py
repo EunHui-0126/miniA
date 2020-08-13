@@ -22,5 +22,6 @@ urlpatterns = [
     path('main/', views.main),
     path('list/', views.list),
     path('board/', views.board),
+    path('map_data/', views.map_data),
 
 ]

@@ -81,10 +81,10 @@ p {
 	padding-bottom: 175px;
 	padding-left: 150px;  /*이거 숫자 늘리면 글자 전체적으로 오른쪽으로감*/
 	text-align: left;
-	background-image: url(../img/RS2435tq.jpg);
-	background-repeat: no-repeat;
+	/* background-image: url(../img/RS2435tq.jpg); */
+	/* background-repeat: no-repeat;
 	background-size: auto;
-	background-position: center center;
+	background-position: center center; */
 	min-height: 680px;
 	height: 680px;
 }
