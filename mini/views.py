@@ -70,20 +70,10 @@ def cur_date_address():
 
 def phone_data(request):
     data = phone.objects.all()
-<<<<<<< HEAD
     return render(request,'index.html',{'data':data})
-=======
-    return render(request,'index.html',{'data':data})    
-
-
-    i=random.randint(1,43)
-    r=menu.objects.get(id=i)
-    return render(request,'index.html',{'a_list':a_list.get_text('"\n"'),'data':data,'r':r})
 
 def base(request):
-
-    return render(request,'base.html')    
-    return render(request,'index.html',{'data':data})
+    return render(request,'base.html')
 
 def update(request, id):
     # select * from article where id = ?
@@ -121,7 +111,3 @@ def delete(request, id):
         return render(request, 'delete_success.html')
     except:
         return render(request, 'delete_fail.html')
-    
-
-
->>>>>>> d6f91289b33a8c4b8d1e3d3218d936bbeeb94a2c
