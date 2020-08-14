@@ -132,3 +132,4 @@ def map_data(request):
         map_list.append(d)
         # dict가 아닌 자료는 항상 safe=False 옵션 사용
     return JsonResponse(map_list, safe=False)
+
