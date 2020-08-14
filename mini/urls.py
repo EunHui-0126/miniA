@@ -22,9 +22,11 @@ urlpatterns = [
     path('main/', views.main),
     path('list/', views.list),
     path('board/', views.board),
+    path('map_data/', views.map_data),
     path('base/', views.base),
     path('update/<int:id>', views.update),
     path('detail/<int:id>', views.detail),
     path('delete/<int:id>', views.delete),
+    path('map_data/', views.map_data),
 
 ]

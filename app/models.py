@@ -14,3 +14,8 @@ class Article(models.Model):
 class phone(models.Model):
     name =  models.CharField(max_length=50)
     ph =  models.CharField(max_length=50)
+
+class Point(models.Model):
+    title = models.CharField(max_length=100)
+    lat = models.FloatField()
+    lng = models.FloatField()
