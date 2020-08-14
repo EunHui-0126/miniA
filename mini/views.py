@@ -7,7 +7,6 @@ from django.http import JsonResponse # JSON 응답
 from app.models import phone
 from app.models import menu
 from django.forms.models import model_to_dict
-
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 import datetime
 import requests
@@ -124,3 +123,12 @@ def delete(request, id):
         return render(request, 'delete_success.html')
     except:
         return render(request, 'delete_fail.html')
+
+def map_data(request):
+    data = Point.objects.all()
+    map_list = []
+    for c in data:
+        d = model_to_dict(c) # QuerySet -> Dict
+        map_list.append(d)
+        # dict가 아닌 자료는 항상 safe=False 옵션 사용
+    return JsonResponse(map_list, safe=False)

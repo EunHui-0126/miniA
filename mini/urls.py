@@ -27,5 +27,6 @@ urlpatterns = [
     path('update/<int:id>', views.update),
     path('detail/<int:id>', views.detail),
     path('delete/<int:id>', views.delete),
+    path('map_data/', views.map_data),
 
 ]
