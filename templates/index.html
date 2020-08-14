@@ -45,9 +45,15 @@
         }
 
         .col-sm-9 .well {
-            height: 355px;
+            height: 320px;
             overflow: auto;
         }
+
+        .col-sm-6 .well {
+            height: 370px;
+            overflow: auto;
+        }
+
 
         .listbtn {
             background-color:#FFB85A;
@@ -161,18 +167,16 @@
                 <div class="col-md-11">
                     <div class="">
                         <div class="text-content" style="margin-top: 30px; text-align: center;">
-                          <img src="/static/img/RS2435tq.jpg" style="width:280px;" alt="">
-                          <h3>메뉴선택 쌉가능</h3>
-                          <div class="line-dec"></div>
-                          <h1 style="color : black">안동대 <br>뭐먹지?</h1>
+                          <img src="/static/img/white.JPG" style="width:500px;" alt="">
+                          
                           <br>
-                          <h3 style="color : black"> 혁신성장 청년인재 </h3>
+                          <!-- <h3 style="color : black"> 혁신성장 청년인재 </h3> -->
                           <h3 style="color : black"> 스마트팩토리 SW 개발자 양성과정</h3>
                           <h3 style="color : black"> 미니프로젝트 3조</h3>
-                          <h3 style="color : black"> 이환희 </h3>
-                          <h3 style="color : black"> 정은희 </h3>
-                          <h3 style="color : black"> 박철형 </h3>
-                          <h3 style="color : black"> 문장혁 </h3>
+                          <h3 style="color : black"> <span class="glyphicon glyphicon-user"></span> 정은희 </h3>
+                          <h3 style="color : black"> <span class="glyphicon glyphicon-user"></span> 이환희 </h3>
+                          <h3 style="color : black"> <span class="glyphicon glyphicon-user"></span> 박철형 </h3>
+                          <h3 style="color : black"> <span class="glyphicon glyphicon-user"></span> 문장혁 </h3>
                         </div>
                     </div>
                 </div>
@@ -180,8 +184,8 @@
             <br>
             <div class="col-sm-9">
                 <div class="well">
-                    <img src="{{r.photo}}" align="right" width="500" height="330" />
-                    <font size="6em" color="red" ><u><b>★오늘의 메뉴 추천★</b></u></font>
+                    <img src="{{r.photo}}" align="right" width="500" height="330" style="float: right;  margin-right: 300px;" />
+                    <font size="6em" style="float: left;  margin-left: 250px;"><span class="glyphicon glyphicon-piggy-bank"></span> 오늘의 메뉴 추천</font>
 
                     <SCRIPT LAUNGUAGE='JAVASCRIPT'>                     // 자바 스크립트 시작
                         function test() {                               // test라는 함수 정의
@@ -194,15 +198,15 @@
                         <FORM>
                             <br>
                             <br>
-                            <INPUT type='BUTTON' value='추천받기' onclick='test()' style="width: 100px; background-color: skyblue; color:white">
+                            <INPUT type='BUTTON' style="float: left;  margin-left: 250px; margin-top: 15px; margin-bottom: 15px;" class="listbtn" value='추천받기' onclick='test()' >
                         </FORM>
 
                     </body>
 
 </html>
-<p><br><font size="6em" color=""><span class="glyphicon glyphicon-chevron-right"></span> 식당 : {{r.restaurant}} </font><br><br><font size="6em" color="" ><span class="glyphicon glyphicon-chevron-right"></span> 메뉴 : {{r.food}}</font></p>
+<p><br><font size="5em" style="float: left;  margin-left: 250px; margin-bottom: 10px; " color=""><span class="glyphicon glyphicon-equalizer"></span> 식당 : {{r.restaurant}} </font><br><br><br><br><font size="5em" style="float: left;  margin-left: 250px; margin-bottom: 25px;" color="" ><span class="glyphicon glyphicon-equalizer"></span> 메뉴 : {{r.food}}</font></p>
                 </br>
-<div class="fb-like" data-href="http://localhost:8000/main/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+<div class="fb-like" style="float: left;  margin-left: 150px; " data-href="http://localhost:8000/main/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false" ></div>
 <!-- <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Flocalhost%3A8000%2Fmain%2F&width=450&layout=standard&action=like&size=small&share=false&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> -->
 
 
@@ -211,7 +215,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="well">
-            <font size="4em" color="blue"><u><b>★오늘의 학식 메뉴★</b></u></font>
+            <font class=title><span class="glyphicon glyphicon-cutlery"></span> 오늘의 학식 메뉴</font>
             <ul>
                 <div style="white-space: pre-line; font-size: 18px;">{{a_list}}</p>
             </ul>
