@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('restaurant', models.CharField(max_length=50)),
                 ('food', models.CharField(max_length=50)),
                 ('photo', models.CharField(max_length=50)),
+                ('votes',models.IntegerField())
             ],
         ),
     ]

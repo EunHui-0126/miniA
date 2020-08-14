@@ -4,6 +4,7 @@ class menu(models.Model):
     restaurant = models.CharField(max_length=50)
     food = models.CharField(max_length=50)
     photo = models.CharField(max_length=1000)
+    votes= models.IntegerField()
 
 class Article(models.Model):
     # id = models.CharField(max_length=100)
